@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service HelloWorld {
+	rpc SayHello(SayHelloInput) returns (SayHelloOutput);
+	rpc Randomise(CustomList) returns (CustomList);
+}
+
+message SayHelloInput {
+	string FirstName = 1;
+	string LastName = 2;
+	bool ForceError = 3;
+	string DesiredErrorMessage = 4;
+}
+
+message SayHelloOutput {
+	string Msg = 1;
+}
+
+message CustomList {
+	repeated int32 List = 1;
+}
